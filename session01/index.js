@@ -4,14 +4,14 @@ function ClickButton() {
     const [clicked, setClick] = React.useState(false);
   
     if (clicked) {
-      return 'Nothing here yet! Change this text to add more info.';
+      return React.createElement("h1" , { className: "h1" }, 'Hello World!')
     }
   
     return React.createElement(
       'button', { className: "main-button", 
-      onClick: () => setClick(true)
+      onClick: () => {setClick(true), alert('Hello!')}
     },
-      'Click To Reveal'
+      'Press here'
     );
   }
   
