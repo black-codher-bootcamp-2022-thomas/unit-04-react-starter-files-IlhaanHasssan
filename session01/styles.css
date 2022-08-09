@@ -1,0 +1,16 @@
+.main-button {
+    background-color: #e91515;
+        color: #fff;
+        border: 0;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        font-size: 1.1em;
+        justify-content: center;
+}
+
+.h1 {
+    color: rgb(42, 195, 42);
+    font-size: large;
+    font-weight: 200;
+}
