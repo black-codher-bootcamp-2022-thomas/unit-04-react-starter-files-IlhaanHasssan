@@ -8,7 +8,7 @@ function App() {
   const [myBooksList, setMyBooksList]= useState(bookList);
   function handleClick(title) {
     return (
-    console.log("this book " + title + "was clicked"));
+    console.log("this book " + title + " was clicked"));
   }
   return (
   <BookList addBook={handleClick}> 

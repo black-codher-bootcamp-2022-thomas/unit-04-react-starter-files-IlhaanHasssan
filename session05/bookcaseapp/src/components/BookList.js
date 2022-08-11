@@ -6,7 +6,7 @@ const BookList=(props)  => {
     const [myBooksList, setMyBooksList]= useState(books);
 
     return (
-        myBooksList.map(book => <Book book={book} onClick={() => console.log("hello")} />
+        myBooksList.map(book => <Book book={book}/>
     ))
 }
 
