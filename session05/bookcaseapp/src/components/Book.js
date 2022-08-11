@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+
 const Book =(props) => {
   return (
     <div>
@@ -7,12 +8,18 @@ const Book =(props) => {
       <h3>{props.book.volumeInfo.authors}</h3>
     </div>
   );
-
-}
+  }
   Book.propTypes = {
     volumeInfo: PropTypes.shape({title: PropTypes.string.isRequired}),
     authors: PropTypes.array.isRequired
    };
 
+//   return (
+// <button onClick={() =>
+// addBook(props.title)}> Add +</button>)
+// }
 
-export default Book;
+
+// unidirectional data flow => can pass state form parent to child, not the other way
+
+export default Book

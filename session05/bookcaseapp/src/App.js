@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import Book from './components/Book';
 import bookList from './models/books.json';
+import  BookList from './components/BookList'
+
 
 function App() {
-  const books = bookList;
   const [myBooksList, setMyBooksList]= useState(bookList);
-  return myBooksList.map(bookItem => <Book book={bookItem}/>) 
+  function handleClick(title) {
+    return (
+    console.log("this book " + title + "was clicked"));
+  }
+  return (
+  <BookList addBook={handleClick}> 
+    
+  </BookList>
+  )
 }
 
 export default App;
