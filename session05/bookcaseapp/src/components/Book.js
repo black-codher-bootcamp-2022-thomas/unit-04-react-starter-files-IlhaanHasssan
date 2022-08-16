@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Book =(props) => {
   return (
     <div>
-      <h2 onClick={(addBook) => props.addBook(props.book.volumeInfo.title)}>{props.book.volumeInfo.title}</h2>
+      <h2 onClick={() => props.addBook(props.book.volumeInfo.title)}>{props.book.volumeInfo.title}</h2>
       <h3>{props.book.volumeInfo.authors}</h3>
     </div>
   );

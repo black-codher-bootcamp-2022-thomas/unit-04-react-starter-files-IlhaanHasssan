@@ -6,8 +6,8 @@ const BookList=(props)  => {
     const [myBooksList, setMyBooksList]= useState(books);
 
     return (
-        myBooksList.map(book => <Book book={book}/>
-    ))
+        myBooksList.map(book => <Book addBook={props.addBook} book={book}/>)
+    )
 }
 
 export default BookList

@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
-import Book from './components/Book';
-import bookList from './models/books.json';
-import  BookList from './components/BookList'
-
+import React, { useState } from "react";
+import Book from "./components/Book";
+import bookList from "./models/books.json";
+import BookList from "./components/BookList";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./components/Header";
 
 function App() {
-  const [myBooksList, setMyBooksList]= useState(bookList);
   function handleClick(title) {
-    return (
-    console.log("this book " + title + " was clicked"));
+    return console.log("this book " + title + " was clicked");
   }
   return (
-  <BookList addBook={handleClick}> 
-    
-  </BookList>
-  )
+    <Router>
+      <Header />
+      <Route
+        path="/"
+        exact
+        render={() => (
+          <>
+            <h2>Welcome to the Bookcase app</h2>
+            <BookList addBook={handleClick}/>
+          </>
+        )}
+      />
+      <Route path="/bookcase" render={() => <h2>Bookcase Page</h2>} />
+    </Router>
+  );
 }
 
 export default App;
-
