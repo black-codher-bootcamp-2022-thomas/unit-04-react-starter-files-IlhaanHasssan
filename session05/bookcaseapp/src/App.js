@@ -4,8 +4,10 @@ import bookList from "./models/books.json";
 import BookList from "./components/BookList";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
+import Search from "./components/Search";
 
 function App() {
+
   function handleClick(title) {
     return console.log("this book " + title + " was clicked");
   }
