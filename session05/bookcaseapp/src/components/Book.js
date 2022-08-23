@@ -11,7 +11,7 @@ const Book =(props) => {
   }
   Book.propTypes = {
     volumeInfo: PropTypes.shape({title: PropTypes.string.isRequired}),
-    authors: PropTypes.array.isRequired
+    authors: PropTypes.array
    };
 
 //   return (
