@@ -5,6 +5,9 @@ import Header from './components/Header';
 import BookList from './components/BookList';
 import About from './pages/About';
 import data from './models/local-books.json';
+import Search from './components/Search';
+
+
 
 const App = () => {
   const [books, setBooks] = useState(data);
@@ -20,6 +23,16 @@ const App = () => {
     }
     )]);
   }
+  const findBooks = async (keyword) => {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${keyword}&filter=paid-ebooks&print-type=books&projection=lite`;
+
+    console.log("url: ", url);
+    const response = await fetch(url, { method: "GET" });
+    const result = await response.json();
+    if(!result.error){
+      setBooks(result.items)
+    }
+  };
 
   const removeFromBookcase = (id) => {
     setBookcase(bookcase.filter(book => book.id !== id));
@@ -46,6 +59,7 @@ const App = () => {
         <Route exact path="/" element={
           <>
             <Header bookLength={bookcase.length} />
+            <Search searchBar={findBooks} />
             <BookList books={books} stored="library" addToBookcase={addToBookcase} removeFromBookcase={removeFromBookcase} />
           </>
         } />
