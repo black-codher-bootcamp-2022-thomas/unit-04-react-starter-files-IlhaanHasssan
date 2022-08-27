@@ -12,7 +12,7 @@ const BookList = ({ books, ...props }) => {
         ) : (
           books
             .filter((book) => props.stored === "bookcase" || !book.read)
-            .map((book) => <Book key={book.id} book={book} {...props} />)
+            .map((book, index) => <Book key={book.id + index} book={book} {...props} />)
         )}
       </div>
     </div>

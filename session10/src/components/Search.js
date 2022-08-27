@@ -1,23 +1,30 @@
 import React, { useState } from "react";
 
 const Search = (props) => {
-  const [keyword, setKeyword] = useState("");
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.searchBar(keyword);
+    props.searchBar(props.keyword);
+
   };
+
+  const myStyle = {
+    color: "red",
+    borderRadius: "5px"
+};
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <p> {keyword && "Search for your favourite books here!"} </p>
+      <form onSubmit={handleSubmit} >
+        <p style={{color:"red"}}> {props.keyword && "Search for your favourite books here!"} </p>
         <div>
           <input
+          style={myStyle}
             type="text"
-            value={keyword}
+            value={props.keyword}
             onChange={(e) => {
-              setKeyword(e.target.value);
+              props.setKeyword(e.target.value);
             }}
           />
           <input type="submit" value="Search" />
